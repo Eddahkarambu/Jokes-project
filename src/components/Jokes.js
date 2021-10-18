@@ -34,6 +34,7 @@ const Joke=()=>{
         <div className="app">
             <div className="card">
                 <div>
+                <h1 className="heading">{categories}</h1>
                     {categories.map((category, index)=>(
                         <list key={index}>{category}</list>
 
