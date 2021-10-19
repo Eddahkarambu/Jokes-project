@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Joke=()=>{
     const [joke, setJoke]= useState("");
-    const [categories, setCategories]= useState[""];
+    const [categories, setCategories]= useState([]);
 
 
     
@@ -11,6 +11,7 @@ const Joke=()=>{
         axios.get('https://api.chucknorris.io/jokes/categories')
         .then((response) =>{
             const list=response.data
+            console.log(list)
             setCategories(list)
 
         })
@@ -34,9 +35,9 @@ const Joke=()=>{
         <div className="app">
             <div className="card">
                 <div>
-                <h1 className="heading">{categories}</h1>
+                <h2 className="headi">categories</h2>
                     {categories.map((category, index)=>(
-                        <list key={index}>{category}</list>
+                        <li key={index}>{category}</li>
 
                     ))}
                 </div>
